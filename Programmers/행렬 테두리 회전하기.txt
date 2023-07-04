@@ -1,0 +1,40 @@
+class Solution {
+    public int[] solution(int rows, int columns, int[][] queries) {
+        int[] answer = new int[queries.length()];
+        
+        rows = 6;
+        columns = 6;
+        queries = new int[][]{[2,2,5,4],[3,3,6,6],[5,1,6,3]};
+        
+        int[][] list = new int[rows][columns];
+        int count1 = 0;
+        int count2 = 0;
+        int[] start = new int[columns];
+        for(int i = 1; i <= rows*columns; i++){
+            if(count != columns){
+                start[count1] = i;
+                count1++;
+            }else{
+                list[count2] = start;
+                start.clear();
+                count1 = 0;
+                count2++;
+            }            
+        }
+        
+        List<Integer> check = new ArrayList<Integer>();
+        for(int[] numlist = queries){
+            for(int i = numlist[0]; i <= numlist[2]; i++){
+                for(int j = numlist[1]; j <= numlist[3]; j++){
+                    check.add(list[i][j]);
+                    if(j == numlist[3]){
+                        
+                    }
+                }
+            }
+        }
+        
+        
+        return answer;
+    }
+}
