@@ -1,22 +1,18 @@
 package test;
 
+import java.util.Arrays;
+
 public class Test5 {
 
     public static void main(String[] args) {
 
+        int[] A = { 6, 9, 5, 1, 12, 4, 8, 7, 2, 11, 10, 3 };
+        
+        System.out.println(solution(A));
+    	
     }
-
-    public int[] random() {
-        int[] random = new int[10];
-        for (int i = 0; i < random.length; i++) {
-            random[i] = (int) Math.random() + 9;
-        }
-        return random;
-    }
-
-    // 퀵 정렬(Quick sort)
-    public static void quick(int[] array) {
-
-    }
-
+    public static double solution(int[] numbers) {
+    	// 배열값들의 평균 구하고 null일 경우 0 반환
+    	return Arrays.stream(numbers).average().orElse(0);
+    }    
 }
