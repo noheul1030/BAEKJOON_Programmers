@@ -36,7 +36,8 @@ public class Test2 {
 //		System.out.println(fibonachi);
 //		System.out.println(fibonachi.get(9));
 		
-		System.out.println(fac(fibo(7)));
+//		System.out.println(fac(fibo(7)));
+		System.out.println(fac(20) / (fac(2)*fac(18)));
 	}
 	
 	// ÆÑÅä¸®¾ó
