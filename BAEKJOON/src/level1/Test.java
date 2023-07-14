@@ -74,10 +74,10 @@ public class Test {
 ///// 이 부분 수정 필요            
             for(String m : map.keySet()){
                 if(map.get(m) == 2){
-                    count += 1;
+                    count += map.get(m);
                 }else break;
             }
-            list.add(spell.length == count ? 1 : 2);
+            list.add(spell.length*2 != count ? 2 : 1);
 /////            
             
             map.clear();
@@ -86,11 +86,11 @@ public class Test {
         System.out.println("list에 담긴 값 : " + list);
         System.out.println();
         for(int n : list){
-            if(n == 2){
-                answer = 1; 
+            if(n == 1){
+                answer = n; 
                 break;
             }
-            else answer = 2;
+            else answer = n;
         }
         return answer;
     }
