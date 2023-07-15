@@ -68,10 +68,10 @@ public class Test {
             for(String s : spell){
                 map.put(s,map.getOrDefault(s,0) + 1);
             }
-            System.out.println("map¿¡ ´ã±ä °ª : " + map);
+            System.out.println("mapì— ë‹´ê¸´ ê°’ : " + map);
             System.out.println();
             
-///// ÀÌ ºÎºĞ ¼öÁ¤ ÇÊ¿ä            
+//// ì´ ë¶€ë¶„ ìˆ˜ì • í•„ìš”            
             for(String m : map.keySet()){
                 if(map.get(m) == 2){
                     count += map.get(m);
@@ -83,7 +83,7 @@ public class Test {
             map.clear();
         }
         
-        System.out.println("list¿¡ ´ã±ä °ª : " + list);
+        System.out.println("listì— ë‹´ê¸´ ê°’ : " + list);
         System.out.println();
         for(int n : list){
             if(n == 1){
