@@ -68,10 +68,10 @@ public class Test {
             for(String s : spell){
                 map.put(s,map.getOrDefault(s,0) + 1);
             }
-            System.out.println("map에 담긴 값 : " + map);
+            System.out.println("map : " + map);
             System.out.println();
             
-//// 이 부분 수정 필요            
+//// 수정 필요            
             for(String m : map.keySet()){
                 if(map.get(m) == 2){
                     count += map.get(m);
@@ -83,7 +83,7 @@ public class Test {
             map.clear();
         }
         
-        System.out.println("list에 담긴 값 : " + list);
+        System.out.println("list : " + list);
         System.out.println();
         for(int n : list){
             if(n == 1){
