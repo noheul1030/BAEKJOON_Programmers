@@ -1,27 +1,21 @@
 import java.util.*;
 class Solution {
     public int solution(int n) {
-        int answer = 0;
-        
-        int[] number = new int[n+1];
-        
-        for(int i = 2; i <= n; i++){
-            number[i] = i;
-        }
-        
-        for(int i = 2; i <= n; i++){
-            if(number[i]==0) continue;
-            
-            for(int j = 2*i; j <= n; j += i){
-                number[j] = 0;
+        List<Integer> result = new ArrayList<>();
+        result.add(2);
+        for(int i = 3; i <=n; i=i+2){
+            int cnt = 0;
+            for(int tmp : result){
+                if(tmp * tmp > i) break;
+                if(i % tmp == 0) {
+                    cnt++;
+                    break;
+                }
             }
+            if(cnt == 0) {
+                result.add(i);
+            }            
         }
-        
-        for(int i = 0; i < number.length; i++){
-            if(number[i] != 0){
-                answer++;
-            }
-        }
-        return answer;
+        return result.size();
     }
 }
