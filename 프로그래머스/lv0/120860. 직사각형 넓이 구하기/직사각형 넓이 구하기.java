@@ -1,6 +1,5 @@
 class Solution {
     public int solution(int[][] dots) {
-        int answer = 0;
         int x = 0;
         int y = 0;
         
@@ -12,8 +11,7 @@ class Solution {
                 y = Math.abs(dots[i][1]-dots[i+1][1]);
             }
         }
-        answer = x * y;
         
-        return answer;
+        return x * y;
      }
 }
