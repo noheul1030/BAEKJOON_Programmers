@@ -1,0 +1,39 @@
+문제 1
+
+SELECT A.BOOK_ID, B.AUTHOR_NAME, TO_char(A.PUBLISHED_DATE,'YYYY-mm-dd')
+FROM BOOK A
+JOIN AUTHOR B ON
+	A.AUTHOR_ID = B.AUTHOR_ID
+WHERE A.CATEGORY LIKE '%경제%'
+ORDER BY A.PUBLISHED_DATE;
+
+
+문제 2
+
+SELECT A.KIHO AS 기호, A.NAME AS 이름, A.GONGYAK AS 공약, 
+   (SELECT COUNT(*) FROM tupyo C WHERE C.KIHO = A.KIHO) AS 본인득표수,
+   (SELECT COUNT(*) FROM tupyo) AS 전체투표자수,
+   ((SELECT COUNT(*) FROM tupyo C WHERE C.KIHO = A.KIHO) / (SELECT COUNT(*) FROM tupyo)) * 100 as 본인득표율
+FROM hubo A
+JOIN tupyo B ON
+A.KIHO = B.KIHO
+GROUP BY A.KIHO
+
+
+문제 3
+
+SELECT 
+
+
+문제 4
+
+SELECT ID AS 학번,
+		NAME AS 이름,
+		KOR AS 국어,
+		ENG AS 영어,
+		MAT AS 수학,
+		(KOR + ENG + MAT) AS 총점,
+		(KOR + ENG + MAT) / 3 AS 평균,
+		RANK() OVER(ORDER BY ((KOR + ENG + MAT) / 3) DESC) AS 등수
+FROM EXAMTABLE;
+		

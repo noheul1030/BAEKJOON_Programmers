@@ -1,0 +1,32 @@
+String[] arr123 = {"사과 5000", "배 3000","귤 1000","복숭아 1500","포도 4000","사과 3000","배 10000", "사과 20000"};
+		Map<String, Integer> map1 = new HashMap<>();
+		for(int i= 0 ; i <arr123.length; i++) {
+			String[] asd = arr123[i].split(" ");
+			map1.put(asd[0], map1.getOrDefault(asd[0],0)  + Integer.parseInt(asd[1]));
+		}
+		System.out.println(map1);
+
+
+
+
+
+
+String str= "HeLLo 12hellO 2365abc";
+						
+		char[] arr = str.toCharArray();
+		String answer = "";
+		for(int i = 0; i< arr.length; i++){
+			if(Character.isUpperCase(arr[i])){
+				answer += String.valueOf(arr[i]).toLowerCase();
+			} else if(Character.isDigit(arr[i])) {
+				String tmp = arr[i] + "";
+				while(Character.isDigit(arr[i + 1])) {
+					tmp += arr[i+1];
+					i++;
+				}
+				answer += Integer.parseInt(tmp) + 1;
+			} else {
+				answer += (arr[i]+"").toUpperCase();
+			}
+		}		
+		System.out.println(answer);

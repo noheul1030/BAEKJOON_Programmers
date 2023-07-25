@@ -1,0 +1,44 @@
+// DFS 탐색
+void DFS(int v){
+	boolean[] visited = new boolean[V];
+	DFSUtil(v, visited)
+}
+
+void DFSUtil(int v, boolean[] visited) {
+	visited[v] = true;
+	System.out.print(v + " ");
+	Iterator<Integer> i = adj[v].listIterator();
+	
+	while (i.hasNext()) {
+		int n = i.next();
+		if (!visited[n])
+		DFSUtil(n, visited);
+	}
+}
+
+
+
+// BFS 탐색
+void BFS(int v) {
+	boolean[] visited = new boolean[V];
+	LinkedList<Integer> queue = new LinkedList<Integer>();
+	
+	visited[v] = true;
+	queue.add(v);
+	
+	while (queue.size() != 0) {
+		v = queue.poll();
+		System.out.print(v + " ");
+		
+		Iterator<Integer> i = adj[v].listIterator();
+		
+		while (i.hasNext()) {
+			int n = i.next();
+			
+			if (!visited[n]) {
+				visited[n] = true;
+				queue.add(n);
+			}
+		}
+	}
+}
