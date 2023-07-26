@@ -55,9 +55,9 @@ public class Solution {
         	
         	HashMap<Integer,Integer> map2 = new HashMap<>();
         	
-        	for (String p : Arrays.toString(plays)) {
-                map.put(p, null);
-            }
+//        	for (String p : Arrays.toString(plays)) {
+//                map.put(p, null);
+//            }
         	for(int j = 0; j < plays.length; j++) {
         		 
         	}
