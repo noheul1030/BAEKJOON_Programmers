@@ -1,0 +1,56 @@
+package practice;
+
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class DFS {
+	
+
+		
+		public static void main(String[] args) {
+			// 방문처리에 사용 할 배열선언
+			boolean[] visited = new boolean[9];
+			
+			// 그림예시 그래프의 연결상태를 2차원 배열로 표현
+			// 인덱스가 각각의 노드번호가 될 수 있게 0번인덱스는 아무것도 없는 상태라고 생각하시면됩니다.
+			int[][] graph = {{}, {2,3,8}, {1,7}, {1,4,5}, {3,5}, {3,4}, {7}, {2,6,8}, {1,7}};
+			System.out.println("DFS : ");
+			dfs(visited.clone(), graph.clone(), 1);
+			System.out.println("\nBFS : ");
+			bfs(visited.clone(), graph.clone(), 1);
+		}
+		
+		public static void dfs(boolean[] visited, int[][] graph, int nodeIndex) {
+			// 방문 처리
+			visited[nodeIndex] = true;
+			
+			// 방문 노드 출력
+			System.out.print(nodeIndex + " -> ");
+			
+			// 방문한 노드에 인접한 노드 찾기
+			for (int node : graph[nodeIndex]) {
+				// 인접한 노드가 방문한 적이 없다면 DFS 수행
+				if(!visited[node]) {
+					dfs(visited, graph, node);
+				}
+			}
+		}
+		
+		public static void bfs(boolean[] visited, int[][] graph, int nodeIndex) {
+			Queue<Integer> q1 = new LinkedList<>();
+			q1.add(nodeIndex);
+			visited[nodeIndex] = true;
+			while(!q1.isEmpty()) {
+				int tmp = q1.poll();
+				System.out.print(tmp + " -> ");
+				for(int i = 0; i < graph[tmp].length; i++) {
+					if(!visited[graph[tmp][i]]) {
+						visited[graph[tmp][i]] = true;
+						q1.offer(graph[tmp][i]);
+					}
+				}
+			}
+		}
+
+
+}
