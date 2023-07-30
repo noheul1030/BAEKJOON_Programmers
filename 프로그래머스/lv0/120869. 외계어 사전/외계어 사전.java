@@ -9,7 +9,6 @@ class Solution {
                 if(d.indexOf(spell[i])==-1){
                     check = -1;
                     answer = 2;
-                    break;
                 }
             }
             if(check == 0){
