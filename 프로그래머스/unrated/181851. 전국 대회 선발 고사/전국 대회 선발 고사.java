@@ -5,7 +5,6 @@ class Solution {
     }
     
     public int recursion(int[] rank, boolean[] attendance, int cnt, int num, int answer){
-        System.out.println("cnt : "+ cnt + ", num : " + num + ", answer : " + answer);
         if(cnt == 3) return answer;
         
         for(int i = 0; i < rank.length; i++){
