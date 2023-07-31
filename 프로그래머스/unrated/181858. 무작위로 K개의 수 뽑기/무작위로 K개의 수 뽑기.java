@@ -9,8 +9,6 @@ class Solution {
             if(!list.contains(a)) list.add(a);
         }
         
-        System.out.println("list : " + list);
-        
         for(int i = 0; i < k; i++){
             if(list.size() > i) answer[i] = list.get(i);    
         }
