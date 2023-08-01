@@ -1,13 +1,11 @@
 class Solution {
-    public int solution(int n, int m) {        
-        return combination(n,m);   
+    public int solution(int balls, int share) {
+        return recursion(balls,share);
     }
     
-    public int combination(int n, int m){
-        if(n == m || m == 0){
-            return 1;
-        }else{
-            return combination(n -1, m -1) + combination(n-1, m);
-        }
+    public int recursion(int balls, int share){
+        if(balls == share || share == 0) return 1;
+        
+        return recursion(balls-1, share-1) + recursion(balls-1, share);
     }
 }
