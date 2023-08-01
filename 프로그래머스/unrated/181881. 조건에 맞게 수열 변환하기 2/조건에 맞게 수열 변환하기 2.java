@@ -1,25 +1,29 @@
-import java.util.*;
 class Solution {
-    public static int solution(int[] arr) {
-        int answer = Retry(arr, 0);
-        return answer;
+    public int solution(int[] arr) {
+        return recursion(arr, 0);
     }
-
-    public static int Retry(int[] arr, int cnt) {
-        int[] arr2 = new int[arr.length];
-
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] % 2 == 0) {
-                if (arr[i] >= 50) arr2[i] = arr[i] / 2;
-            } else {
-                if (arr[i] < 50) arr2[i] = arr[i] * 2 + 1;
+    
+    public int recursion(int[]arr, int cnt){
+        int[] re = new int[arr.length];
+        
+        int count = 0;
+        for(int i = 0; i < arr.length; i++){
+            if(arr[i] % 2 == 0){
+                if(arr[i] >= 50){
+                    re[i] = arr[i] / 2;
+                    count++;
+                }
+            }else{
+                if(arr[i] < 50){
+                    re[i] = arr[i] * 2 + 1;
+                    count++;
+                }
             }
         }
-
-        if (!Arrays.equals(arr, arr2)) {
-            cnt++;
-            return Retry(arr2, cnt);
-        } else
-            return cnt - 1;
+        
+        if(count == 0) return cnt;
+        else {
+            return recursion(re, cnt + 1);
+        }
     }
 }
