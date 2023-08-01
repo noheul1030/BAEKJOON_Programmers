@@ -7,6 +7,7 @@ class Solution {
             set.add(n);
         }
         
-        return nums.length / 2 > set.size() ? set.size() : nums.length / 2;
+        if(nums.length / 2 > set.size()) return set.size();
+        return nums.length / 2;
     }
 }
