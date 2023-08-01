@@ -8,19 +8,16 @@ class Solution {
         }
         
         int max = 0;
-        int key = 0;
-        for(int m : map.keySet()){
-            if(map.get(m) > max){
-                max = map.get(m);
-                key = m;
+        int answer = 0;
+
+        for(int key : map.keySet()){
+            if(max < map.get(key)){
+                max = map.get(key);
+                answer = key;
+            } else if(max == map.get(key)){
+                answer = -1;
             }
         }
-        
-        int count = 0;
-        for(int m : map.keySet()){
-            if(map.get(m) == max) count++;
-        }
-
-        return count >= 2 ? -1 : key;
+        return answer;
     }
 }
