@@ -4,9 +4,10 @@ class Solution {
         
         int index = 0;
         for(String str1 : s.split("")){
-            if(index % 2 == 0) answer += str1.toUpperCase();
-            else answer += str1.toLowerCase();
+            answer += index % 2 == 0 ?
+                str1.toUpperCase() : str1.toLowerCase();
             index++;
+            
             if(str1.equals(" ")) index = 0;
         }
         return answer;
