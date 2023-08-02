@@ -1,23 +1,17 @@
 import java.util.*;
 class Solution {
     public int solution(String[] spell, String[] dic) {
-        int answer = 0;
+        int answer = 2;
         
-        for(String d : dic){
-            int check = 0;
-            for(int i = 0; i < spell.length; i++){
-                if(d.indexOf(spell[i])==-1){
-                    check = -1;
-                    answer = 2;
-                    break;
-                }
+        int check = 0;
+        for(int i = 0; i < dic.length; i++){
+            for(String s : spell){
+                if(dic[i].contains(s)) check++;
             }
-            if(check == 0){
-                answer =1;
-                break;
-            }
+            if(check == spell.length) return 1;
+            
+            check = 0;
         }
         return answer;
     }
-    
 }
