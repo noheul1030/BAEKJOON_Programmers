@@ -3,10 +3,8 @@ class Solution {
         int answer = 0;
         
         while(n >= a){
-            int re = 0;
             answer += n / a * b;
-            re = n % a;
-            n = n / a * b + re;   
+            n = (n / a * b) + (n % a);   
         }
         return answer;
     }
