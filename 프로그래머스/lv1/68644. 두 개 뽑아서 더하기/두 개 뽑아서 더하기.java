@@ -10,11 +10,12 @@ class Solution {
         }
         
         Iterator<Integer> iter = set.iterator();
-        List<Integer> list = new ArrayList<>();
+        int[] answer = new int[set.size()];
+        int cnt = 0;
         while(iter.hasNext()){
-            list.add(iter.next());
+            answer[cnt] = iter.next();
+            cnt++;
         }
-        Collections.sort(list);
-        return list.stream().mapToInt(i -> i).toArray();
+        return answer;
     }
 }
