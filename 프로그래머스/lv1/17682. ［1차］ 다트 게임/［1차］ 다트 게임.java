@@ -34,10 +34,11 @@ class Solution {
         }
         return arr[0] + arr[1] + arr[2];
     }
-    
+    // SDT 계산
     public void SDT(int[] arr, char cha, int round){
         arr[round - 1] = cha == 'D' ? (int) Math.pow(arr[round - 1],2) : cha == 'T' ? (int)Math.pow(arr[round - 1],3) : arr[round - 1];
     }
+    // *, # 계산
     public void SDT2(int[] arr, char cha, int round){
         if(cha == '#') arr[round - 1] = arr[round - 1] * -1;
         else if(cha == '*'){
@@ -48,4 +49,5 @@ class Solution {
             }
         }   
     }
+    
 }
