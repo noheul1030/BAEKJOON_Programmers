@@ -1,0 +1,11 @@
+SELECT ('/home/grep/src/'||A.BOARD_ID||'/'||A.FILE_ID||A.FILE_NAME||A.FILE_EXT) FILE_PATH
+FROM USED_GOODS_FILE A
+WHERE A.BOARD_ID = (
+       SELECT 
+            BOARD_ID 
+        FROM 
+            USED_GOODS_BOARD
+        ORDER BY 
+            VIEWS DESC
+        FETCH FIRST 1 ROW ONLY )
+ORDER BY A.FILE_ID DESC
