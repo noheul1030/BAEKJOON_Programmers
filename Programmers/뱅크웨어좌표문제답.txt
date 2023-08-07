@@ -1,0 +1,28 @@
+int answer = office[r][c];
+office[r][c] = 0;
+
+int[] dx = {0,1,0,-1};
+int[] dy = {1,0,-1,0};
+int d = 3;
+
+for(String move_str : move){
+if(move_str.equals("go") {
+int nx = r + dx[d];
+int ny = c + dy[d];
+if( 0<= nx && nx < office.length && 0<= ny && ny < office[0].length
+&& office[nx][ny] != -1){
+answer += office[nx][ny];
+office[nx][ny] = 0;
+r = nx;
+c = ny;
+}
+
+} else if(move_str.equals("left"){
+d = (d + 3) % 4;
+if(d == - 1){
+d = 3;
+}
+} else if(move_str.equals("right"){
+d = (d + 1) % 4;
+}
+}
