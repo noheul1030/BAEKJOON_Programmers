@@ -8,9 +8,11 @@ class Solution {
             numstr[i] = Integer.parseInt(str[i]);
         }
         
-        int min = Arrays.stream(numstr).min().getAsInt();
-        int max = Arrays.stream(numstr).max().getAsInt();        
+        // int min = Arrays.stream(numstr).min().getAsInt();
+        // int max = Arrays.stream(numstr).max().getAsInt();        
         
-        return Integer.toString(min) + " " + Integer.toString(max);
+        // return Integer.toString(min) + " " + Integer.toString(max);
+        Arrays.sort(numstr);
+        return numstr[0] + " " + numstr[numstr.length-1];
     }
 }
