@@ -15,9 +15,6 @@ public class Main {
 		List<Map.Entry<String, Integer>> list = new ArrayList<>(map.entrySet());
 		Collections.sort(list, (entry1, entry2) -> entry2.getValue().compareTo(entry1.getValue()));
 		
-		String value = "";
-		int count = 0;
-		
 		String maxIndex = "";
 		int max = 0;
 
