@@ -9,8 +9,6 @@ public class Main {
 			Arrays.fill(c, ' ');
 		}
 		
-		String result = "";
-		
 		for (int n = 0; n < 5; n++) {
 			String input = sc.nextLine();
 			
