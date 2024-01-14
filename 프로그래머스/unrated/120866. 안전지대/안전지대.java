@@ -19,6 +19,7 @@ class Solution {
 				}
 			}
 		}
+	    
 		for (int[] arr : board) {
 			for (int i : arr) {
 				answer += i == 0 ? 1 : 0;
